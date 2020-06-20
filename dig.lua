@@ -10,13 +10,16 @@ function placeStairs()
 	turtle.back()
 end
 
-function clearStairsBlocks()
+function placeStairsOdd()
 	turtle.turnRight()
 	turtle.turnRight()
 	turtle.forward()
 	turtle.dig()
 	turtle.forward()
 	turtle.dig()
+	turtle.select(16)
+	turtle.place()
+	turtle.select(1)
 	turtle.turnLeft()
 	turtle.turnLeft()
 	turtle.forward()
@@ -56,7 +59,7 @@ for i = 1, level do
 	 		if (j == 1 and (not isTurn) and k == size and (i % 2) == 0) then
 	        	placeStairs()
 	        elseif (j == size and (not isTurn) and k == 1 and (i % 2) ~= 0) then
-				clearStairsBlocks()
+				placeStairsOdd()
 	        end
 
             turtle.forward()
